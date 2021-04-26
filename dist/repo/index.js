@@ -15,7 +15,6 @@ var register_1 = __importDefault(require("./commands/register"));
 var unregister_1 = __importDefault(require("./commands/unregister"));
 var sync_1 = __importDefault(require("./commands/sync"));
 inquirer_1.default.prompt.registerPrompt('path', inquirer_path_1.PathPrompt);
-// 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
 function loadConfig() {
     return new Promise(function (resolve, reject) {
         if (!Storager_1.default.get('auth')) {
