@@ -8,8 +8,8 @@ export default async function () {
       type: 'path',
       name: 'path',
       default: process.cwd(),
-      message: `Please give me the relative path to the destionation you will want to sync you repositories ${(!!actualConfig.basePath) ? ` (current: ${actualConfig.basePath}))` : ''}: `,
+      message: ''//`Please give me the relative path to the destionation you will want to sync you repositories ${(!!actualConfig.basePath) ? ` (current: ${actualConfig.basePath}))` : ''}: `,
     }
   ]);
-  store.set('basePath', path);
+  // store.set('basePath', path);
 }

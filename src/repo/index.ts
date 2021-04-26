@@ -52,9 +52,8 @@ loadConfig().then(() => {
     .action(list)
 
   program
-    .command('register <org|user> [reponame]')
+    .command('register <org|user>')
     .option('-u, --user', 'Specify that the give profile is a user, not an organization', false)
-    .option('-a, --all', 'Register all repositories', false)
     .action(register)
 
   program

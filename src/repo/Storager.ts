@@ -8,15 +8,16 @@ export type Storage = {
   creationDate: number,
   lastUpdate: number,
   location: string,
+  git: {
+    auth: string
+    login: string
+  }
   auth?: string,
-  basePath: string,
-  registered: {
-    [k: string]: string[]
-  }
+  registered: Array<{
+    name: string,
+    path: string
+  }>
   login?: string
-  syncPaths: {
-    [k: string]: string
-  }
 }
 
 class Storager {
@@ -24,11 +25,21 @@ class Storager {
   public config: Storage;
   constructor() {
     if (!existsSync(this.configPath)) {
+      const baseConfig: Storage = {
+        creationDate: Date.now(),
+        lastUpdate: Date.now(),
+        location: this.configPath,
+        registered: [],
+        git: {
+          auth: "",
+          login: ""
+        }
+      }
       writeFileSync(this.configPath, JSON.stringify({
         creationDate: Date.now(),
         lastUpdate: Date.now(),
         location: this.configPath,
-        registered: {},
+        registered: [],
         syncPaths: {}
       }));
       console.info(`Configuration file created at ${this.configPath}`);

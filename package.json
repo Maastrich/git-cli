@@ -25,6 +25,7 @@
     "inquirer": "^8.0.0",
     "inquirer-path": "^1.0.0-beta5",
     "node-persist": "^3.1.0",
+    "simple-git": "^2.38.0",
     "yargs": "^16.2.0"
   }
 }
